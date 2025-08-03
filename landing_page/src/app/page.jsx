@@ -1,29 +1,51 @@
 import Navbar from "./components/Navbar";
 import Image from "next/image";
+
 import FeaturedPost from "./components/FeaturedPost";
+import LargePostsSection from "./components/LargePostsSection";
 
 export default function Home() {
   // Featured posts data array
   const featuredPosts = [
     {
+      id: "1",
       title: "Revolutionizing industries through SaaS implementation",
-      img:"/img1.jpg"
+      img: "/img1.jpg",
+      description: "Explore how SaaS solutions are transforming business landscapes and driving innovation across various sectors.",
+      author: "Jennifer Taylor",
+      content: `SaaS (Software as a Service) is revolutionizing industries by offering scalable, cost-effective, and easily accessible solutions. Businesses can now leverage cloud-based applications to streamline operations, enhance collaboration, and drive innovation. From healthcare to finance, SaaS platforms are enabling organizations to adapt quickly to changing market demands and stay ahead of the competition.`
     },
     {
+      id: "2",
       title: "Synergizing saas and UX design for elevating digital experiences",
-      img:"/img2.jpg"
+      img: "/img2.jpg",
+      description: "Discover the intersection of SaaS and UX design, and how it can create more engaging and effective digital experiences.",
+      author: "Jennifer Taylor",
+      content: `The fusion of SaaS and UX design is key to creating digital products that are not only functional but also delightful to use. By prioritizing user needs and behaviors, SaaS providers can deliver intuitive interfaces and seamless workflows, resulting in higher user satisfaction and retention.`
     },
     {
+      id: "3",
       title: "Navigating saas waters with intuitive UI and UX",
-      img:"/img3.jpg"
+      img: "/img3.jpg",
+      description: "Learn how intuitive UI and UX design can help users navigate complex SaaS applications with ease.",
+      author: "Ryan A.",
+      content: `Intuitive UI and UX design are essential for guiding users through complex SaaS applications. Clear navigation, consistent layouts, and helpful feedback empower users to accomplish tasks efficiently, reducing frustration and support requests.`
     },
     {
+      id: "4",
       title: "Sculpting saas success - the art of UI and UX design",
-      img:"/img4.jpg"
+      img: "/img4.jpg",
+      description: "Explore the key principles of UI and UX design that can drive success in SaaS applications.",
+      author: "Jennifer Taylor",
+      content: `Successful SaaS products are built on a foundation of strong UI and UX principles. This includes understanding user journeys, minimizing friction, and continuously iterating based on feedback. A well-designed SaaS platform not only attracts new users but also fosters long-term loyalty.`
     },
     {
+      id: "5",
       title: "Transforming saas platforms - a UI/UX design odyssey",
-      img:"/img1.jpg"
+      img: "/img1.jpg",
+      description: "Join us on a journey through the evolution of UI/UX design in SaaS platforms.",
+      author: "Jennifer Taylor",
+      content: `The evolution of UI/UX design in SaaS platforms reflects the growing importance of user-centric development. Modern SaaS solutions emphasize accessibility, responsiveness, and personalization, ensuring that users have a positive experience across devices and contexts.`
     }
   ];
 
@@ -79,6 +101,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Large Posts Section as a separate component */}
+      <LargePostsSection posts={featuredPosts} />
     </div>
   );
 }
