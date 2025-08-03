@@ -7,7 +7,7 @@ const Navbar = () => {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <h1 className="text-xl font-semibold text-gray-900">Beyond UI</h1>
+                        <h1 className="text-2xl font-semibold text-gray-900">Beyond UI</h1>
                     </div>
 
                     {/* Navigation Links and Buttons Grouped Together */}

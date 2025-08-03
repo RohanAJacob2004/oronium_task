@@ -7,15 +7,15 @@ export default function LargePostsSection({ posts }) {
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-semibold mb-6">Recent Posts</h2>
         <div className="flex justify-end ">
-          <button className="px-4 py-1 border mb-5 border-gray-300 rounded-full text-gray-700 hover:bg-gray-100  transition">All Posts</button>
+          <Link href="/all-posts" className="px-4 py-1 border mb-5 border-gray-300 rounded-full text-gray-700 hover:bg-gray-100 transition">All Posts</Link>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.slice(0, 3).map((post, idx) => (
+        {posts.slice(0, 6).map((post, idx) => (
               <Link
                 key={post.id || idx}
                 href={`/blog/${post.id || (idx + 1)}`}
-                className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-200"
+                className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col hover:shadow-lg hover:scale-105 transition-transform duration-200"
               >
                 <div className="relative h-56 w-full">
                   <Image
