@@ -22,7 +22,7 @@ export default function LoginPage() {
             </div>
             {/* Title & Subtitle */}
             <div className="mb-4 text-start max-w-[250px]">
-              <h2 className="text-xl font-bold text-gray-800 mb-1">Get started</h2>
+              <h2 className="text-xl font-semibold text-gray-800 mb-1">Get started</h2>
               <p className="text-gray-400 text-xs">Please input your login credentials or create a new account</p>
             </div>
             {/* Login Form */}
