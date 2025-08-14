@@ -1,14 +1,26 @@
 'use client'
 import React from "react";
 import { useEffect, useState } from "react";
-import { useVoiceVisualizer, VoiceVisualizer } from "react-voice-visualizer";
+import dynamic from "next/dynamic";
+import { useVoiceVisualizer } from "react-voice-visualizer";
 import { convertBlobToMp3, downloadMp3, initFFmpeg } from "./ffmpegUtils";
 
-const RecorderPage = () => {
 
+const VoiceVisualizerWrapper = dynamic(
+  () => import("./VoiceVisualizerWrapper"),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center h-[180px] w-full max-w-[600px] bg-zinc-800 rounded-[18px]">
+        <div className="text-white">Loading voice visualizer...</div>
+      </div>
+    )
+  }
+);
+
+const RecorderPage = () => {
     const recorderControls = useVoiceVisualizer();
     const {
-        
         recordedBlob,
         error,
     } = recorderControls;
@@ -26,7 +38,6 @@ const RecorderPage = () => {
                 console.error('Failed to initialize FFmpeg:', error);
             }
         };
-        
         loadFFmpeg();
     }, []);
 
@@ -56,7 +67,7 @@ const RecorderPage = () => {
   return (
     <div className="bg-black min-h-screen w-full flex flex-col items-center justify-center px-2 py-8">
       <div className="w-full max-w-lg sm:max-w-xl md:max-w-2xl flex justify-center mb-4">
-        <VoiceVisualizer
+        <VoiceVisualizerWrapper
           controls={recorderControls}
           isDownloadAudioButtonShown={false}
           height={180}
@@ -88,7 +99,6 @@ const RecorderPage = () => {
               </>
             ) : (
               <>
-                
                 Download 
               </>
             )}
